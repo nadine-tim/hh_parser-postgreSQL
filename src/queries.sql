@@ -23,4 +23,4 @@ OR (SELECT (AVG(salary_to) + AVG(salary_from))/2  FROM vacancies  WHERE salary_t
 --"""получает список всех вакансий, в названии которых содержатся переданные в метод слова, например “python”"""
 SELECT vacancy
 FROM vacancies
-WHERE vacancy LIKE {keyword}
+WHERE vacancy ILIKE {keyword}

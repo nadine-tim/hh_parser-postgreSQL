@@ -144,7 +144,7 @@ class DBManager:
         Получает список всех вакансий, в названии которых содержатся переданные в метод слова, например “python”
         """
         keyword = "'" + '%' + word + '%' + "'"
-        query = f'SELECT vacancy FROM vacancies WHERE vacancy LIKE {keyword}'
+        query = f'SELECT vacancy FROM vacancies WHERE vacancy ILIKE {keyword}'
         conn = psycopg2.connect(host='localhost', database='hh_vacancies', user='postgres', password='pgadmin')
         with conn:
             with conn.cursor() as cur:
